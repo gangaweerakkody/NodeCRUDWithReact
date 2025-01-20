@@ -4,7 +4,7 @@ function Student() {
   return (
     <div class="container">
     <div class="text">
-       Contact us Form
+       Node CRUD
     </div>
     <form action="#">
        <div class="form-row">
