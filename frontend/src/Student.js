@@ -1,8 +1,17 @@
 import React, {useEffect} from 'react';
+import axios from 'axios';
 
 
 
 function Student() {
+
+   useEffect(()=>{
+      axios.get('http://localhost:8082/')
+      .then(res=>console.log(res))
+         .catch(err => console.log(err))
+      
+
+   },[])
   return (
     <div class="container">
     <div class="text">
