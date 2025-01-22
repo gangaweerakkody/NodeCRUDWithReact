@@ -17,6 +17,7 @@ function Student() {
     <div class="text">
        Node CRUD
     </div>
+    
     <form action="#">
        <div class="form-row">
           <div class="input-data">
