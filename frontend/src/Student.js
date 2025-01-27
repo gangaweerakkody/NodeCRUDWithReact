@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 
 
 function Student() {
+const[student,setStudent] = useState([])
 
    useEffect(()=>{
       axios.get('http://localhost:8082/')
@@ -19,30 +20,32 @@ function Student() {
     </div>
     
     <form action="#">
-       <div class="form-row">
-          <div class="input-data">
-             <input type="text" required/>
-             <div class="underline"></div>
-             <label for="">Full Name</label>
-          </div>
-          
-       </div>
-       <div class="form-row">
-          <div class="input-data">
-             <input type="text" required/>
-             <div class="underline"></div>
-             <label for="">Email Address</label>
-          </div>
-          
-       </div>
-      
-         
-          <div class="form-row submit-btn">
-             <div class="input-data">
-                <div class="inner"></div>
-                <input type="submit" value="submit"/>
-             </div>
-          </div>
+    <table border="1">
+          <tbody>
+            <tr>
+              <th>
+                <label htmlFor="fullName">Full Name</label>
+              </th>
+              
+              <th> 
+                <label htmlFor="email">Email Address</label>
+              </th>
+            </tr>
+
+           
+         {
+            student.map((data,i)=>(
+                  <tr>
+                     <td>{data.name}</td>
+                     <td>{data.email}</td>
+                  </tr>
+            ))
+
+            
+         }
+           
+          </tbody>
+        </table>
           
     </form>
     </div>
