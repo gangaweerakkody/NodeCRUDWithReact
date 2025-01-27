@@ -8,7 +8,7 @@ const[student,setStudent] = useState([])
 
    useEffect(()=>{
       axios.get('http://localhost:8082/')
-      .then(res=>console.log(res))
+      .then(res=>setStudent(res.data))
          .catch(err => console.log(err))
       
 
@@ -35,9 +35,9 @@ const[student,setStudent] = useState([])
            
          {
             student.map((data,i)=>(
-                  <tr>
-                     <td>{data.name}</td>
-                     <td>{data.email}</td>
+                  <tr key={i}>
+                     <td>{data.Name}</td>
+                     <td>{data.Email}</td>
                   </tr>
             ))
 
