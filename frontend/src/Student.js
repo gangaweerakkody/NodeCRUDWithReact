@@ -23,13 +23,15 @@ const[student,setStudent] = useState([])
     <table border="1">
           <tbody>
             <tr>
-              <th>
+              <td>
                 <label htmlFor="fullName">Full Name</label>
-              </th>
+              </td>
               
-              <th> 
+              <td> 
                 <label htmlFor="email">Email Address</label>
-              </th>
+              </td>
+
+
             </tr>
 
            
@@ -38,6 +40,9 @@ const[student,setStudent] = useState([])
                   <tr key={i}>
                      <td>{data.Name}</td>
                      <td>{data.Email}</td>
+                     <td>  <button classname='update'>Update</button>
+                     <button classname='delete'>Delete</button></td>
+                   
                   </tr>
             ))
 
