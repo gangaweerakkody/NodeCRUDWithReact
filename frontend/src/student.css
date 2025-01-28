@@ -40,15 +40,6 @@ th {
   color: #333;
 }
 
-input[type="submit"] {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
 
 .update{
   background-color: rgb(51, 147, 14);
@@ -80,5 +71,5 @@ input[type="submit"] {
 }
 
 .add{
-  
+
 }
