@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-
-
+import './student.css'
+import { Link } from 'react-router-dom';
 
 function Student() {
 const[student,setStudent] = useState([])
@@ -14,12 +14,13 @@ const[student,setStudent] = useState([])
 
    },[])
   return (
-    <div class="container">
-    <div class="text">
+    <div className="container">
+    <div className="text">
        Node CRUD
     </div>
+    <Link to="/create" className="Add">Add +</Link>
     
-    <form action="#">
+    <form action="#" >
     <table border="1">
           <tbody>
             <tr>
@@ -31,6 +32,10 @@ const[student,setStudent] = useState([])
                 <label htmlFor="email">Email Address</label>
               </td>
 
+              <td>
+                <label htmlFor="action">Action</label>
+              </td>
+
 
             </tr>
 
@@ -40,8 +45,8 @@ const[student,setStudent] = useState([])
                   <tr key={i}>
                      <td>{data.Name}</td>
                      <td>{data.Email}</td>
-                     <td>  <button classname='update'>Update</button>
-                     <button classname='delete'>Delete</button></td>
+                     <td>  <button className='update'>Update</button>
+                     <button className='delete'>Delete</button></td>
                    
                   </tr>
             ))
