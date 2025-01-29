@@ -1,6 +1,9 @@
 import React from 'react'
 import './create.css'
 function Create() {
+   const[name,setName]= useState('')
+   const[email,setEmail]= useState('')
+
   return (
  <div className="container">
       <h2>Create Student</h2>
@@ -8,7 +11,7 @@ function Create() {
     
         <div className="name">
             <label htmlFor="name">Student Name</label>
-            <input type="text" placeholder="Enter Name" className="form-control"/>
+            <input type="text" placeholder="Enter Name" className="form-control" onChange={e => setName(e.target.value)}/>
          </div>
          <div className='email'>
             <label htmlFor="email">Email</label>
