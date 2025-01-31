@@ -1,6 +1,7 @@
 import React , {useState} from 'react'
 import './create.css'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 function Create() {
    const[name,setName]= useState('')
    const[email,setEmail]= useState('')
