@@ -2,6 +2,7 @@ import React , {useState} from 'react'
 import './create.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+
 function Create() {
    const[name,setName]= useState('')
    const[email,setEmail]= useState('')
@@ -9,12 +10,21 @@ function Create() {
 
 function handleSubmit(event){
    event.preventDefault();
-   axios.post('http://localhost:8082/create',{name,email})
+   
+   if(!name || !email){
+      alert("Please fill in all fields!");
+      return;
+   }
+   axios.post('http://localhost:8082/create',{name,email}, {
+      headers: {"Content-Type": "application/json" }
+   })
    .then(res => {
       console.log(res);
       navigate('/');
 
-   })  .catch(err => {console.log(err);})
+   }) .catch(err => {console.log(err);
+      alert("Failed to add student");
+   })
 }
   return (
  <div className="container">

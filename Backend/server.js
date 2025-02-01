@@ -37,15 +37,15 @@ app.get("/", (req, res) => {
 });
 
 app.post('/create',(req,res) =>{
-    const sql="INSERT INTO STUDENT (`Name`,`Email`) VALUES (?)";
+    const sql="INSERT INTO STUDENT (`Name`,`Email`) VALUES (?,?)";
     const values = [
         req.body.name,
         req.body.email
     ]
     db.query(sql, [values], (err, data) => {
         if(err) return res.json("Error");
-        return res.json(data);
-
+        return res.json({message:"Student added successfully", data});
+ 
     })
 })
 
